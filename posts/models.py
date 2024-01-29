@@ -1,5 +1,6 @@
 from django.utils import timezone
 from django.db import models
+from taggit.managers import TaggableManager
 
 # Create your models here.
 
@@ -23,6 +24,7 @@ class Post(models.Model):
     # create time auto
     publish_date2 = models.DateTimeField(auto_now=True) 
     
+    tags = TaggableManager()
     
     def __str__(self):
         return self.title
