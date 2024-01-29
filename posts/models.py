@@ -25,6 +25,8 @@ class Post(models.Model):
     publish_date2 = models.DateTimeField(auto_now=True) 
     
     tags = TaggableManager()
+    image = models.ImageField(upload_to='post')
+    
     
     def __str__(self):
         return self.title
